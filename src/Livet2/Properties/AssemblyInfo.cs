@@ -1,5 +1,6 @@
 ﻿using System.Reflection;
 using System.Runtime.InteropServices;
+using System.Windows.Markup;
 
 // アセンブリに関する一般情報は以下の属性セットをとおして制御されます。
 // アセンブリに関連付けられている情報を変更するには、
@@ -33,3 +34,16 @@ using System.Runtime.InteropServices;
 // [assembly: AssemblyVersion("1.0.*")]
 [assembly: AssemblyVersion("0.1.0.0")]
 [assembly: AssemblyFileVersion("0.1.0.0")]
+
+[assembly: XmlnsDefinition("http://schemas.livet-mvvm.net/2011/wpf", "Livet")]
+[assembly: XmlnsDefinition("http://schemas.livet-mvvm.net/2011/wpf", "Livet.Commands")]
+[assembly: XmlnsDefinition("http://schemas.livet-mvvm.net/2011/wpf", "Livet.Converters")]
+[assembly: XmlnsDefinition("http://schemas.livet-mvvm.net/2011/wpf", "Livet.Messaging")]
+[assembly: XmlnsDefinition("http://schemas.livet-mvvm.net/2011/wpf", "Livet.Behaviors")]
+[assembly: XmlnsDefinition("http://schemas.livet-mvvm.net/2011/wpf", "Livet.Messaging.IO")]
+[assembly: XmlnsDefinition("http://schemas.livet-mvvm.net/2011/wpf", "Livet.Messaging.Windows")]
+[assembly: XmlnsDefinition("http://schemas.livet-mvvm.net/2011/wpf", "Livet.Behaviors.Messaging")]
+[assembly: XmlnsDefinition("http://schemas.livet-mvvm.net/2011/wpf", "Livet.Behaviors.Messaging.IO")]
+[assembly: XmlnsDefinition("http://schemas.livet-mvvm.net/2011/wpf", "Livet.Behaviors.Messaging.Windows")]
+[assembly: XmlnsDefinition("http://schemas.livet-mvvm.net/2011/wpf", "Livet.Behaviors.ControlBinding")]
+[assembly: XmlnsDefinition("http://schemas.livet-mvvm.net/2011/wpf", "Livet.Behaviors.ControlBinding.OneWay")]

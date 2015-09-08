@@ -1,6 +1,8 @@
 ﻿using Livet.Messaging;
 using StatefulModel;
 using System;
+using System.Threading;
+using System.Windows.Threading;
 
 namespace Livet
 {
@@ -8,6 +10,7 @@ namespace Livet
     {
         public InteractionMessenger Messenger { get; set; } = new InteractionMessenger();
         public CompositeDisposable CompositeDisposable { get; set; } = new CompositeDisposable();
+        public static SynchronizationContext DispatcherContext { get; } = new DispatcherSynchronizationContext(DispatcherHelper.UIDispatcher); 
 
         #region IDisposable Support
         private bool _disposedValue;
