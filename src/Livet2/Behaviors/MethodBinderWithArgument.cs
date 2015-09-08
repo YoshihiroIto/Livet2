@@ -69,7 +69,7 @@ namespace Livet.Behaviors
 
                     if (parameters.Length != 1) return false;
 
-                    if (!_argumentType.IsAssignableFrom(parameters[0].ParameterType)) return false;
+                    if ((!_argumentType.IsSubclassOf(parameters[0].ParameterType)) && (_argumentType != parameters[0].ParameterType)) return false;
 
                     return method.ReturnType == typeof(void);
                 });
@@ -82,7 +82,7 @@ namespace Livet.Behaviors
 
             _methodInfo.Invoke(targetObject, new[] { argument });
 
-            var taskArgument = new Tuple<Type, MethodInfo, Type>(_targetObjectType, _methodInfo, _argumentType);
+            var taskArgument = new Tuple<Type, MethodInfo, Type>(_targetObjectType, _methodInfo, _methodInfo.GetParameters()[0].ParameterType);
 
             Task.Factory.StartNew(arg =>
             {
