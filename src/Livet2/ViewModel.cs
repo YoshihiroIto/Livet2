@@ -7,7 +7,7 @@ namespace Livet
     public abstract class ViewModel : NotificationObject, IDisposable
     {
         public InteractionMessenger Messenger { get; set; } = new InteractionMessenger();
-        public CompositeDisposable CompositeDisposable { get; set; } = new CompositeDisposable();
+        public MultipleDisposable MultipleDisposable { get; set; } = new MultipleDisposable();
 
         #region IDisposable Support
         private bool _disposedValue;
@@ -18,11 +18,11 @@ namespace Livet
             {
                 if (disposing)
                 {
-                    CompositeDisposable?.Dispose();
+                    MultipleDisposable?.Dispose();
                 }
                 _disposedValue = true;
 
-                CompositeDisposable?.Dispose();
+                MultipleDisposable?.Dispose();
             }
         }
 
